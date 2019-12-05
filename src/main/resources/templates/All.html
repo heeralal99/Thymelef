@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>GetAll</title>
+</head>
+<body>
+<table border="1">
+<tr>
+	<th>ID</th>
+	<th>PRODUCT NAME</th>
+	<th>PRODUCT COST</th>
+	<th>CODE</th>
+	<th>Operaction</th>
+</tr>
+<tr th:each="ob:${allproduct}">
+	<td th:text="${ob.id}"></td>
+	<td th:text="${ob.prodName}"></td>
+	<td th:text="${ob.cost}"></td>
+	<td th:text="${ob.prodCode}"></td>
+	<td>
+	<a th:href="@{/product/delete/{id}(id=${ob.id})}">Delete</a>
+	<a th:href="@{/product/edit/{id}(id=${ob.id})}">Edit</a>
+	
+	</td>
+	
+</tr>
+
+</table>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registr</title>
+
+</head>
+<body>
+<h2>WELCOME TO PRODUCT REGISTER PAGE REGISTER </h2>
+<form th:action="@{/product/save}" method="post" th:object="${product}">
+<pre>
+Enter Product Name:<input type="text" th:field="*{prodName}">
+Enter Product Code:<input type="text" th:field="*{prodCode}">
+Enter Product Cost:<input type="text" th:field="*{cost}">
+					<input type="submit" value="Register">
+</pre>
+</form>
+</body>
+<h4 th:text="${msg}"></h4>
+</html>

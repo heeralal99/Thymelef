@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit</title>
+<link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+</head>
+<body>
+
+<h2>WELCOME TO PRODUCT Edit PAGE  </h2>
+<form th:action="@{/product/save}" method="post" th:object="${editProduct}">
+<pre>
+User id :<input type="text" readonly="readonly" th:field="*{id}">
+Edit Product Name:<input type="text" th:field="*{prodName}">
+Edit Product Code:<input type="text" th:field="*{prodCode}">
+Edit Product Cost:<input type="text" th:field="*{cost}">
+<input type="submit" value="Update">
+</pre>
+</form>
+</body>
+</html>
